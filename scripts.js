@@ -21,68 +21,55 @@ setInterval(function() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    const videoLoader = document.getElementById('video-loader');
-    const introVideo = document.getElementById('intro-video');
     const galleryContainer = document.querySelector('.gallery-container');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const closeBtn = document.querySelector('.lightbox .close');
 
-    // Check if video has been played before
-    if (!localStorage.getItem('videoPlayed')) {
-        introVideo.play();
-        introVideo.addEventListener('ended', () => {
-            videoLoader.style.display = 'none';
-            localStorage.setItem('videoPlayed', 'true');
-        });
-    } else {
-        videoLoader.style.display = 'none';
-    }
-
     // Load gallery images (Assuming the images are in an array)
     const images = [
-        'assets\\images\\picturesicreated\\1.jpg',
-        'assets\\images\\picturesicreated\\3.jpg',
-        'assets\\images\\picturesicreated\\2.jpg',
-        'assets\\images\\picturesicreated\\4.jpg',
-        'assets\\images\\picturesicreated\\5.jpg',
-        'assets\\images\\picturesicreated\\6.jpg',
-        'assets\\images\\picturesicreated\\7.jpg',
-        'assets\\images\\picturesicreated\\8.jpg',
-        'assets\\images\\picturesicreated\\9.jpg',
-        'assets\\images\\picturesicreated\\10.jpg',
-        'assets\\images\\picturesicreated\\11.jpg',
-        'assets\\images\\picturesicreated\\12.jpg',
-        'assets\\images\\picturesicreated\\13.jpg',
-        'assets\\images\\picturesicreated\\14.jpg',
-        'assets\\images\\picturesicreated\\15.jpg',
-        'assets\\images\\picturesicreated\\16.jpg',
-        'assets\\images\\picturesicreated\\17.jpg',
-        'assets\\images\\picturesicreated\\18.jpg',
-        'assets\\images\\picturesicreated\\19.jpg',
-        'assets\\images\\picturesicreated\\20.jpg',
-        'assets\\images\\picturesicreated\\21.jpg',
-        'assets\\images\\picturesicreated\\22.jpg',
-        'assets\\images\\picturesicreated\\23.jpg',
-        'assets\\images\\picturesicreated\\24.jpg',
-        'assets\\images\\picturesicreated\\25.jpg',
-        'assets\\images\\picturesicreated\\26.jpg',
-        'assets\\images\\picturesicreated\\27.jpg',
-        'assets\\images\\picturesicreated\\28.jpg',
-        'assets\\images\\picturesicreated\\29.jpg',
-        'assets\\images\\picturesicreated\\30.jpg',
-        'assets\\images\\picturesicreated\\31.jpg',
-        'assets\\images\\picturesicreated\\32.jpg',
-        'assets\\images\\picturesicreated\\33.jpg',
-        'assets\\images\\picturesicreated\\34.jpg',
-        'assets\\images\\picturesicreated\\35.jpg',
-        'assets\\images\\picturesicreated\\36.jpg',
-        'assets\\images\\picturesicreated\\37.jpg',
-        'assets\\images\\picturesicreated\\38.jpg',
-        'assets\\images\\picturesicreated\\39.jpg',
-        'assets\\images\\picturesicreated\\40.jpg',
-        'assets\\images\\picturesicreated\\41.jpg',
-        'assets\\images\\picturesicreated\\42.jpg',
+        'assets\\images\\1.jpg',
+        'assets\\images\\3.jpg',
+        'assets\\images\\2.jpg',
+        'assets\\images\\4.jpg',
+        'assets\\images\\5.jpg',
+        'assets\\images\\6.jpg',
+        'assets\\images\\7.jpg',
+        'assets\\images\\8.jpg',
+        'assets\\images\\9.jpg',
+        'assets\\images\\10.jpg',
+        'assets\\images\\11.jpg',
+        'assets\\images\\12.jpg',
+        'assets\\images\\13.jpg',
+        'assets\\images\\14.jpg',
+        'assets\\images\\15.jpg',
+        'assets\\images\\16.jpg',
+        'assets\\images\\17.jpg',
+        'assets\\images\\18.jpg',
+        'assets\\images\\19.jpg',
+        'assets\\images\\20.jpg',
+        'assets\\images\\21.jpg',
+        'assets\\images\\22.jpg',
+        'assets\\images\\23.jpg',
+        'assets\\images\\24.jpg',
+        'assets\\images\\25.jpg',
+        'assets\\images\\26.jpg',
+        'assets\\images\\27.jpg',
+        'assets\\images\\28.jpg',
+        'assets\\images\\29.jpg',
+        'assets\\images\\30.jpg',
+        'assets\\images\\31.jpg',
+        'assets\\images\\32.jpg',
+        'assets\\images\\33.jpg',
+        'assets\\images\\34.jpg',
+        'assets\\images\\35.jpg',
+        'assets\\images\\36.jpg',
+        'assets\\images\\37.jpg',
+        'assets\\images\\38.jpg',
+        'assets\\images\\39.jpg',
+        'assets\\images\\40.jpg',
+        'assets\\images\\41.jpg',
+        'assets\\images\\42.jpg',
     ];
 
     images.forEach(src => {
@@ -94,6 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
             lightboxImg.src = src;
         });
         galleryContainer.appendChild(img);
+        console.log("Image added");
     });
 
     // Close the lightbox
