@@ -238,7 +238,7 @@ body::-webkit-scrollbar-thumb {
 
 footer {
   position: relative;
-  
+
   width: 100%;
   background-color: #000;
   color: white;
@@ -320,5 +320,10 @@ footer {
     grid-gap: 10px;
     justify-content: space-between;
     margin: 20px;
+  }
+  .banner {
+    background: url(assets/background/backgroundmobile.jpg);
+    background-size: cover;
+    background-position: center;
   }
 }
