@@ -110,21 +110,26 @@ body::-webkit-scrollbar-thumb {
 #home {
   padding: 250px 20px;
 }
+
 #home h1 {
   font-size: 50px;
 }
+
 #home h1 span {
   color: red;
   font-family: "Rock Salt", cursive;
 }
+
 .section h2 {
   color: red;
 }
+
 #gallery h2,
 #drive h2,
 #lightroom h2 {
   font-size: 50px;
 }
+
 #gallery p,
 #home p,
 #drive p,
@@ -132,10 +137,12 @@ body::-webkit-scrollbar-thumb {
   font-size: 20px;
   padding-bottom: 24px;
 }
+
 #gallery p {
   line-height: 30px;
   text-align: center;
 }
+
 #gallery .gallery-container {
   display: flex;
   flex-wrap: wrap;
@@ -245,6 +252,28 @@ footer {
   text-align: center;
   padding: 10px 0;
 }
+
+
+.gallery-container,
+.flex {
+  animation: CSSScrollReveals linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+@keyframes CSSScrollReveals {
+  from {
+    opacity: 0;
+    scale: 0.5;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+
+  }
+}
+
 /* Media Query for mobile devices */
 @media only screen and (max-width: 768px) {
   .navbar {
@@ -321,9 +350,15 @@ footer {
     justify-content: space-between;
     margin: 20px;
   }
+
   .banner {
     background: url(assets/background/backgroundmobile.jpg);
     background-size: cover;
     background-position: center;
+  }
+
+  .gallery-container,
+  .flex {
+    animation: none;
   }
 }
