@@ -245,12 +245,16 @@ body::-webkit-scrollbar-thumb {
 
 footer {
   position: relative;
-
   width: 100%;
   background-color: #000;
   color: white;
   text-align: center;
   padding: 10px 0;
+}
+
+footer p a {
+  text-decoration: none;
+  color: #fff;
 }
 
 
